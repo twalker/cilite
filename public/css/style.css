@@ -1,0 +1,16 @@
+body {
+  padding: 30px;
+  font: 14px sans-serif;
+  background-color: #fff;
+  transition: background-color 1s;
+  -webkit-transition: background-color 1s;
+}
+body.red {
+  background-color: #f00;
+}
+body.green {
+  background-color: #008000;
+}
+body.yellow {
+  background-color: #ff0;
+}
