@@ -8,6 +8,8 @@
   "dependencies": {
     "express": "3.1.0",
     "jade": "*",
-    "stylus": "*"
+    "stylus": "*",
+    "johnny-five": "~0.5.14",
+    "request": "~2.16.6"
   }
 }
