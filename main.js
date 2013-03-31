@@ -12,13 +12,10 @@ var status = new JenkinsStatus({
 	interval: 1000
 });
 
-
-status.on('response', function(stat, body){
+status.on('response', function(json, body){
 	// do something with the lite.
-	console.log('response event')
+	console.log('response event', json)
 });
-
-console.log(status)
 
 status.start();
 
