@@ -11,7 +11,9 @@
     "jade": "*",
     "stylus": "*",
     "johnny-five": "~0.5.14",
-    "request": "~2.16.6"
+    "request": "~2.16.6",
+    "optimist": "~0.3.5",
+    "lodash": "~1.1.1"
   },
   "devDependencies": {
     "mocha": "~1.8.2"

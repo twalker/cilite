@@ -1,17 +1,32 @@
 var five = require("johnny-five"),
 	request = require("request"),
+	argv = require('optimist').argv,
 	CILite = require("./lib/cilite"),
-	Status = require("./lib/jenkins-status"),
+	JenkinsStatus = require("./lib/jenkins-status"),
 	lite, board, led;
 
-function getStatus(cb){
-	request('http://ci.jruby.org/api/json', function(err, res, body){
+var statusUrl = argv.url || "http://ci.jruby.org/api/json";
 
-		console.log('body', JSON.parse(body));
-	});
-}
+var status = new JenkinsStatus({
+	url: statusUrl,
+	interval: 1000
+});
 
-getStatus(function(){});
+
+status.on('response', function(stat, body){
+	// do something with the lite.
+	console.log('response event')
+});
+
+console.log(status)
+
+status.start();
+
+
+setTimeout(function() {
+	status.stop();
+}, 5000);
+
 /*
 board = new five.Board();
 
