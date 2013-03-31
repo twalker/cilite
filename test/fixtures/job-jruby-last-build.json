@@ -1,0 +1,305 @@
+{
+  "actions" : [
+    {
+      "causes" : [
+        {
+          "shortDescription" : "Started by timer"
+        }
+      ]
+    },
+    {
+      "buildsByBranchName" : {
+        "origin/master" : {
+          "buildNumber" : 1200,
+          "buildResult" : null,
+          "revision" : {
+            "SHA1" : "416b53ac9eab0938bf5a50faf605fa910108fcf8",
+            "branch" : [
+              {
+                "SHA1" : "416b53ac9eab0938bf5a50faf605fa910108fcf8",
+                "name" : "origin/master"
+              }
+            ]
+          }
+        }
+      },
+      "lastBuiltRevision" : {
+        "SHA1" : "416b53ac9eab0938bf5a50faf605fa910108fcf8",
+        "branch" : [
+          {
+            "SHA1" : "416b53ac9eab0938bf5a50faf605fa910108fcf8",
+            "name" : "origin/master"
+          }
+        ]
+      },
+      "remoteUrls" : [
+        "git://jruby.org/jruby.git"
+      ],
+      "scmName" : ""
+    },
+    {
+      
+    },
+    {
+      
+    }
+  ],
+  "artifacts" : [
+    {
+      "displayPath" : null,
+      "fileName" : "jruby-bin-1.7.4.dev.tar.gz",
+      "relativePath" : "dist/jruby-bin-1.7.4.dev.tar.gz"
+    },
+    {
+      "displayPath" : null,
+      "fileName" : "jruby-bin-1.7.4.dev.tar.gz.md5",
+      "relativePath" : "dist/jruby-bin-1.7.4.dev.tar.gz.md5"
+    },
+    {
+      "displayPath" : null,
+      "fileName" : "jruby-bin-1.7.4.dev.tar.gz.sha1",
+      "relativePath" : "dist/jruby-bin-1.7.4.dev.tar.gz.sha1"
+    },
+    {
+      "displayPath" : null,
+      "fileName" : "jruby-bin-1.7.4.dev.zip",
+      "relativePath" : "dist/jruby-bin-1.7.4.dev.zip"
+    },
+    {
+      "displayPath" : null,
+      "fileName" : "jruby-bin-1.7.4.dev.zip.md5",
+      "relativePath" : "dist/jruby-bin-1.7.4.dev.zip.md5"
+    },
+    {
+      "displayPath" : null,
+      "fileName" : "jruby-bin-1.7.4.dev.zip.sha1",
+      "relativePath" : "dist/jruby-bin-1.7.4.dev.zip.sha1"
+    },
+    {
+      "displayPath" : null,
+      "fileName" : "jruby-complete-1.7.4.dev.jar",
+      "relativePath" : "dist/jruby-complete-1.7.4.dev.jar"
+    },
+    {
+      "displayPath" : null,
+      "fileName" : "jruby-complete-1.7.4.dev.jar.md5",
+      "relativePath" : "dist/jruby-complete-1.7.4.dev.jar.md5"
+    },
+    {
+      "displayPath" : null,
+      "fileName" : "jruby-complete-1.7.4.dev.jar.sha1",
+      "relativePath" : "dist/jruby-complete-1.7.4.dev.jar.sha1"
+    },
+    {
+      "displayPath" : null,
+      "fileName" : "jruby-jars-1.7.4.dev.gem",
+      "relativePath" : "dist/jruby-jars-1.7.4.dev.gem"
+    },
+    {
+      "displayPath" : null,
+      "fileName" : "jruby-jars-1.7.4.dev.gem.md5",
+      "relativePath" : "dist/jruby-jars-1.7.4.dev.gem.md5"
+    },
+    {
+      "displayPath" : null,
+      "fileName" : "jruby-jars-1.7.4.dev.gem.sha1",
+      "relativePath" : "dist/jruby-jars-1.7.4.dev.gem.sha1"
+    },
+    {
+      "displayPath" : null,
+      "fileName" : "jruby-openssl-0.8.8.dev.gem",
+      "relativePath" : "dist/jruby-openssl-0.8.8.dev.gem"
+    },
+    {
+      "displayPath" : null,
+      "fileName" : "jruby-openssl-0.8.8.dev.gem.md5",
+      "relativePath" : "dist/jruby-openssl-0.8.8.dev.gem.md5"
+    },
+    {
+      "displayPath" : null,
+      "fileName" : "jruby-openssl-0.8.8.dev.gem.sha1",
+      "relativePath" : "dist/jruby-openssl-0.8.8.dev.gem.sha1"
+    },
+    {
+      "displayPath" : null,
+      "fileName" : "jruby-src-1.7.4.dev.tar.gz",
+      "relativePath" : "dist/jruby-src-1.7.4.dev.tar.gz"
+    },
+    {
+      "displayPath" : null,
+      "fileName" : "jruby-src-1.7.4.dev.tar.gz.md5",
+      "relativePath" : "dist/jruby-src-1.7.4.dev.tar.gz.md5"
+    },
+    {
+      "displayPath" : null,
+      "fileName" : "jruby-src-1.7.4.dev.tar.gz.sha1",
+      "relativePath" : "dist/jruby-src-1.7.4.dev.tar.gz.sha1"
+    },
+    {
+      "displayPath" : null,
+      "fileName" : "jruby-src-1.7.4.dev.zip",
+      "relativePath" : "dist/jruby-src-1.7.4.dev.zip"
+    },
+    {
+      "displayPath" : null,
+      "fileName" : "jruby-src-1.7.4.dev.zip.md5",
+      "relativePath" : "dist/jruby-src-1.7.4.dev.zip.md5"
+    },
+    {
+      "displayPath" : null,
+      "fileName" : "jruby-src-1.7.4.dev.zip.sha1",
+      "relativePath" : "dist/jruby-src-1.7.4.dev.zip.sha1"
+    }
+  ],
+  "building" : false,
+  "description" : null,
+  "duration" : 979978,
+  "estimatedDuration" : 944216,
+  "executor" : null,
+  "fullDisplayName" : "jruby-dist-master #1200",
+  "id" : "2013-03-30_03-01-27",
+  "keepLog" : false,
+  "number" : 1200,
+  "result" : "SUCCESS",
+  "timestamp" : 1364637687924,
+  "url" : "http://ci.jruby.org/job/jruby-dist-master/1200/",
+  "builtOn" : "",
+  "changeSet" : {
+    "items" : [
+      {
+        "affectedPaths" : [
+          "src/org/jruby/Ruby.java"
+        ],
+        "commitId" : "eb6e220d8c582b3f23744aa53712eb7d87e3f7e1",
+        "timestamp" : 1364578200000,
+        "author" : {
+          "absoluteUrl" : "http://ci.jruby.org/user/hasari",
+          "fullName" : "Hiro Asari"
+        },
+        "comment" : "Add @Override to Ruby.java\n",
+        "date" : "2013-03-29 10:30:00 -0400",
+        "id" : "eb6e220d8c582b3f23744aa53712eb7d87e3f7e1",
+        "msg" : "Add @Override to Ruby.java",
+        "paths" : [
+          {
+            "editType" : "edit",
+            "file" : "src/org/jruby/Ruby.java"
+          }
+        ]
+      },
+      {
+        "affectedPaths" : [
+          "src/org/jruby/RubyInstanceConfig.java",
+          "src/org/jruby/Main.java"
+        ],
+        "commitId" : "600578120d0abaebae29e45418df93f934bba92c",
+        "timestamp" : 1364596278000,
+        "author" : {
+          "absoluteUrl" : "http://ci.jruby.org/user/Charles%20Oliver%20Nutter",
+          "fullName" : "Charles Oliver Nutter"
+        },
+        "comment" : "Fix #530.\n\nIf no inline script (via '-e') or a script is given on the command-line,\ndo not create a Ruby runtime, but return immediately.\n",
+        "date" : "2013-03-29 15:31:18 +0100",
+        "id" : "600578120d0abaebae29e45418df93f934bba92c",
+        "msg" : "Fix #530.",
+        "paths" : [
+          {
+            "editType" : "edit",
+            "file" : "src/org/jruby/Main.java"
+          },
+          {
+            "editType" : "edit",
+            "file" : "src/org/jruby/RubyInstanceConfig.java"
+          }
+        ]
+      },
+      {
+        "affectedPaths" : [
+          "src/org/jruby/RubyInstanceConfig.java",
+          "src/org/jruby/Main.java"
+        ],
+        "commitId" : "9455243a00447da881635662afc71196fa5b733f",
+        "timestamp" : 1364597698000,
+        "author" : {
+          "absoluteUrl" : "http://ci.jruby.org/user/Charles%20Oliver%20Nutter",
+          "fullName" : "Charles Oliver Nutter"
+        },
+        "comment" : "Tweak fix for #530 to only bail out when -v with no argv script.\n",
+        "date" : "2013-03-29 15:54:58 +0100",
+        "id" : "9455243a00447da881635662afc71196fa5b733f",
+        "msg" : "Tweak fix for #530 to only bail out when -v with no argv script.",
+        "paths" : [
+          {
+            "editType" : "edit",
+            "file" : "src/org/jruby/RubyInstanceConfig.java"
+          },
+          {
+            "editType" : "edit",
+            "file" : "src/org/jruby/Main.java"
+          }
+        ]
+      },
+      {
+        "affectedPaths" : [
+          "src/org/jruby/ext/ffi/MemoryPointer.java",
+          "src/org/jruby/ext/ffi/AutoPointer.java",
+          "src/org/jruby/ext/ffi/Struct.java",
+          "src/org/jruby/ext/ffi/Pointer.java",
+          "src/org/jruby/ext/ffi/StructLayout.java",
+          "src/org/jruby/ext/ffi/ReifyingAllocator.java"
+        ],
+        "commitId" : "416b53ac9eab0938bf5a50faf605fa910108fcf8",
+        "timestamp" : 1364599363000,
+        "author" : {
+          "absoluteUrl" : "http://ci.jruby.org/user/Wayne%20Meissner",
+          "fullName" : "Wayne Meissner"
+        },
+        "comment" : "Set the reified class for some FFI classes, and make subclasses of those intended for subclassing, reifiable.\n",
+        "date" : "2013-03-29 16:22:43 +1000",
+        "id" : "416b53ac9eab0938bf5a50faf605fa910108fcf8",
+        "msg" : "Set the reified class for some FFI classes, and make subclasses of those intended for subclassing, reifiable.",
+        "paths" : [
+          {
+            "editType" : "edit",
+            "file" : "src/org/jruby/ext/ffi/StructLayout.java"
+          },
+          {
+            "editType" : "edit",
+            "file" : "src/org/jruby/ext/ffi/Pointer.java"
+          },
+          {
+            "editType" : "add",
+            "file" : "src/org/jruby/ext/ffi/ReifyingAllocator.java"
+          },
+          {
+            "editType" : "edit",
+            "file" : "src/org/jruby/ext/ffi/Struct.java"
+          },
+          {
+            "editType" : "edit",
+            "file" : "src/org/jruby/ext/ffi/MemoryPointer.java"
+          },
+          {
+            "editType" : "edit",
+            "file" : "src/org/jruby/ext/ffi/AutoPointer.java"
+          }
+        ]
+      }
+    ],
+    "kind" : "git"
+  },
+  "culprits" : [
+    {
+      "absoluteUrl" : "http://ci.jruby.org/user/Charles%20Oliver%20Nutter",
+      "fullName" : "Charles Oliver Nutter"
+    },
+    {
+      "absoluteUrl" : "http://ci.jruby.org/user/Wayne%20Meissner",
+      "fullName" : "Wayne Meissner"
+    },
+    {
+      "absoluteUrl" : "http://ci.jruby.org/user/hasari",
+      "fullName" : "Hiro Asari"
+    }
+  ]
+}

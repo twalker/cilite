@@ -1,20 +1,32 @@
-var five = require("johnny-five"),
-	request = require("request"),
+var five = require('johnny-five'),
+	request = require('request'),
 	argv = require('optimist').argv,
-	CILite = require("./lib/cilite"),
-	JenkinsStatus = require("./lib/jenkins-status"),
+	CILite = require('./lib/cilite'),
+	JenkinsStatus = require('./lib/jenkins-status'),
 	lite, board, led;
 
-var statusUrl = argv.url || "http://ci.jruby.org/api/json";
+
+var lite = new CILite({});
+
+var statusUrl = argv.url || 'http://ci.jruby.org/job/jruby-dist-master/lastBuild/api/json?pretty=true';
 
 var status = new JenkinsStatus({
 	url: statusUrl,
 	interval: 1000
 });
 
-status.on('response', function(json, body){
+var statusColorMap = {
+	success: 'green',
+	building: 'yellow',
+	fail: 'red'
+};
+
+status.on('response', function(status, body){
 	// do something with the lite.
-	console.log('response event', json)
+	console.log('response event', status);
+	// use
+	lite[statusColorMap[status]]();
+
 });
 
 status.start();
@@ -27,7 +39,7 @@ setTimeout(function() {
 /*
 board = new five.Board();
 
-board.on("ready", function() {
+board.on('ready', function() {
 	console.log('board ready');
 	var lite = new CILite({
 		pin: 13
@@ -40,10 +52,10 @@ board.on("ready", function() {
 	//	pin: 13
 	//});
 
-	// "on" turns the led _on_
+	// 'on' turns the led _on_
 	//led.on();
 
-	// "off" turns the led _off_
+	// 'off' turns the led _off_
 	//led.off();
 
 	// Turn the led back on after 3 seconds (shown in ms)
