@@ -21,10 +21,21 @@ var statusColorMap = {
 	fail: 'red'
 };
 
+/*
 status.on('response', function(status, body){
 	// do something with the lite.
-	console.log('response event', status);
-	// use
+	console.log('response event', status, JSON.parse(body).fullDisplayName);
+	// use lite.red(), lite.yellow(), or lite.green();
+	lite[statusColorMap[status]]();
+
+});
+*/
+status.on('change', function(status, body){
+	console.log(JSON.parse(body).fullDisplayName, 'changed to', status);
+	// do something with the lite.
+	lite.turn(statusColorMap[status])
+
+	// use lite.red(), lite.yellow(), or lite.green();
 	lite[statusColorMap[status]]();
 
 });
