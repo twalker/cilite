@@ -2,7 +2,7 @@ var five = require('johnny-five'),
 	request = require('request'),
 	argv = require('optimist').argv,
 	CILite = require('./lib/cilite'),
-	JenkinsStatus = require('./lib/jenkins-status'),
+	BuildStatus = require('./lib/build-status'),
 	lite, board, led;
 
 
@@ -10,33 +10,47 @@ var lite = new CILite({});
 
 var statusUrl = argv.url || 'http://ci.jruby.org/job/jruby-dist-master/lastBuild/api/json?pretty=true';
 
-var status = new JenkinsStatus({
+var status = new BuildStatus({
 	url: statusUrl,
-	interval: 1000
+	interval: 1000,
+	parse: function(res) {
+		var stats = ['success', 'building', 'failure'];
+		var rnd = Math.floor(Math.random() * 3);
+		return stats[rnd];
+	}
 });
 
-var statusColorMap = {
-	success: 'green',
-	building: 'yellow',
-	fail: 'red'
-};
 
-/*
 status.on('response', function(status, body){
-	// do something with the lite.
 	console.log('response event', status, JSON.parse(body).fullDisplayName);
-	// use lite.red(), lite.yellow(), or lite.green();
-	lite[statusColorMap[status]]();
-
 });
-*/
+
 status.on('change', function(status, body){
 	console.log(JSON.parse(body).fullDisplayName, 'changed to', status);
+	var statusColorMap = {
+		success: 'green',
+		building: 'yellow',
+		failure: 'red'
+	};
 	// do something with the lite.
-	lite.turn(statusColorMap[status])
-
+	//lite.turn(statusColorMap[status])
+	// OR
 	// use lite.red(), lite.yellow(), or lite.green();
-	lite[statusColorMap[status]]();
+	//lite[statusColorMap[status]]();
+	// OR
+	switch(status) {
+		case 'success':
+			lite.green();
+			break;
+		case 'failure':
+			lite.red();
+			break;
+		case 'building':
+			lite.yellow();
+			break;
+		default:
+			lite.on();
+	}
 
 });
 
