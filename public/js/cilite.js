@@ -1,10 +1,13 @@
-$(function(){
-	$('nav a').on('click', function(e){
 
-		var $target = $(e.currentTarget);
+var socket = io.connect('http://localhost');
 
-		$(document.body)
-			.removeClass('red yellow green')
-			.addClass($target.text());
-	});
+var statusColorMap = {
+	success: 'green',
+	building: 'yellow',
+	failure: 'red'
+};
+
+socket.on('status:change', function(msg){
+	console.log('recieved', msg.status)
+	document.body.className = statusColorMap[msg.status];
 });
