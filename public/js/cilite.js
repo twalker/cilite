@@ -8,6 +8,6 @@ var statusColorMap = {
 };
 
 socket.on('status:change', function(msg){
-	console.log('recieved', msg.status)
+	//console.log('recieved', msg.status)
 	document.body.className = statusColorMap[msg.status];
 });

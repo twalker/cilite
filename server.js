@@ -1,16 +1,16 @@
 
-var express = require('express'),
-	app = express(),
-	http = require('http'),
-	server = http.createServer(app),
-	io = require('socket.io').listen(server),
+var http = require('http'),
 	path = require('path'),
-	BuildStatus = require('./lib/build-status');
+	BuildStatus = require('./lib/build-status'),
+	express = require('express');
 
+var app = module.exports = express();
+var	server = http.createServer(app);
+var io = require('socket.io').listen(server);
 
 var status = new BuildStatus({
 	url: 'http://ci.jruby.org/job/jruby-dist-master/lastBuild/api/json?pretty=true',
-	interval: 1000,
+	interval: 5000,
 	parse: function(res) {
 		var stats = ['success', 'building', 'failure'];
 		var rnd = Math.floor(Math.random() * 3);
@@ -18,8 +18,16 @@ var status = new BuildStatus({
 	}
 });
 
+io.on('connection', function(socket){
+	// send next response to client so they don't have to wait for change.
+	status.once('response',function(status, body){
+		io.sockets.emit('status:change', {status: status});
+	});
+
+});
+
 status.on('change', function(status, body){
-	io.sockets.emit('status:change', {status: status, body: body});
+	io.sockets.emit('status:change', {status: status});
 });
 
 app
@@ -42,5 +50,6 @@ app.get('/', function(req, res){
 
 server.listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
+  // start polling for build status
   status.start();
 });
