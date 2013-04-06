@@ -16,5 +16,4 @@ changes an rgb led light color:
 `node server --url=JSON_STATUS_URL` to use a webpage "light" instead of an Arduino board
 
 -------------
-
-![cilite photo](https://raw.github.com/twalker/cilite/master/public/img/cilite.jpg "cilite photo")
+<img src="https://github.com/twalker/cilite/raw/master/public/img/cilite.jpg">
