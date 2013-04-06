@@ -3,7 +3,7 @@ var socket = io.connect('http://localhost');
 
 var statusColorMap = {
 	success: 'green',
-	building: 'yellow',
+	building: 'blue',
 	failure: 'red'
 };
 

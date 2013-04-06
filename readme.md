@@ -1,9 +1,20 @@
 cilite
 ======
 
-a traffic light using arduino for jenkins ci
+An [Arduino](http://www.arduino.cc/) build status light for use in with continious integration.
+
+It polls [Jenkins](http://jenkins-ci.org/) for the status of the last build and 
+changes an rgb led light color:
+
+    success   =>  green
+    failed    =>  red
+    building  =>  blue
 
 `npm test` to test  
 `npm start` to run with defaults  
 `node main --url=JSON_STATUS_URL` to use arguments  
-`node server` to create express server    
+`node server --url=JSON_STATUS_URL` to use a webpage "light" instead of an Arduino board
+
+-------------
+
+![cilite photo](https://raw.github.com/twalker/cilite/master/public/img/cilite.jpg "cilite photo")

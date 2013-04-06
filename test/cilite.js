@@ -1,12 +1,21 @@
 var assert = require("assert"),
-	CILite = require('../lib/cilite');
+	CILite = require('../lib/cilite'),
+	five = require("johnny-five");
 
 describe('CILite', function(){
 	var lite;
+	var board = new five.Board();
 
-	beforeEach(function(){
-		lite = new CILite();
+	before(function(done){
+		board.on('ready', function(){
+			lite = new CILite();
+			done();
+		});
 	});
+
+	after(function(){
+		lite.off();
+	})
 
 	describe('constructor(options)', function(){
 		it('should have colors', function(){
@@ -24,11 +33,11 @@ describe('CILite', function(){
 	});
 
 	describe('.turn(color)', function(){
-		it('should have turn the light a provided color', function(){
+		it('should turn the light a provided color name', function(){
 			assert.ok(lite.turn)
 
-			lite.turn('yellow');
-			assert.equal(lite.color, 'yellow')
+			lite.turn('blue');
+			assert.equal(lite.color, 'blue')
 
 			assert.throws(
 				function(){
@@ -40,19 +49,27 @@ describe('CILite', function(){
 		})
 
 	})
-	describe('.red(), .yellow(), .green()', function(){
+
+	describe('.red(), .green(), .blue()', function(){
 		it('should have convenience methods for setting the color', function(){
 			assert.ok(lite.red)
-			assert.ok(lite.yellow)
+			assert.ok(lite.blue)
 			assert.ok(lite.green)
 
-			lite.green();
-			assert.equal(lite.color, "green")
 			lite.red();
 			assert.equal(lite.color, "red")
-			lite.yellow();
-			assert.equal(lite.color, "yellow")
+			lite.green();
+			assert.equal(lite.color, "green")
+			lite.blue();
+			assert.equal(lite.color, "blue")
 		})
 
+		it('should have .stop(), .wait(), .go() aliases for traffic light semantics', function(){
+			// alias methods
+			assert.ok(lite.go)
+			assert.ok(lite.stop)
+			assert.ok(lite.wait)
+
+		})
 	})
 })

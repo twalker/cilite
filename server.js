@@ -1,6 +1,7 @@
 
 var http = require('http'),
 	path = require('path'),
+	argv = require('optimist').argv,
 	BuildStatus = require('./lib/build-status'),
 	express = require('express');
 
@@ -8,14 +9,19 @@ var app = module.exports = express();
 var	server = http.createServer(app);
 var io = require('socket.io').listen(server);
 
+var statusUrl = argv.url || 'http://ci.jruby.org/job/jruby-dist-master/lastBuild/api/json?pretty=true';
+
 var status = new BuildStatus({
-	url: 'http://ci.jruby.org/job/jruby-dist-master/lastBuild/api/json?pretty=true',
-	interval: 5000,
-	parse: function(res) {
+	url: statusUrl,
+	interval: 5000
+	/*
+	// parsing function for debugging
+	,parse: function(res) {
 		var stats = ['success', 'building', 'failure'];
 		var rnd = Math.floor(Math.random() * 3);
 		return stats[rnd];
 	}
+	*/
 });
 
 io.on('connection', function(socket){

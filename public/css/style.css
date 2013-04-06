@@ -11,6 +11,12 @@ body.red {
 body.green {
   background-color: #008000;
 }
-body.yellow {
-  background-color: #ff0;
+body.blue {
+  background-color: #00f;
+}
+body img.jenkins {
+  display: block;
+  margin: auto;
+  width: 50%;
+  height: 50%;
 }

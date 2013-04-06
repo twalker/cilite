@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node main",
-    "test": "mocha --ui bdd --recursive --reporter spec --timeout 10000 --slow 300"
+    "test": "mocha --ignore-leaks --ui bdd --recursive --reporter spec --timeout 10000 --slow 300"
   },
   "dependencies": {
     "express": "3.1.0",
