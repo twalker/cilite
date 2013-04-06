@@ -34,14 +34,8 @@ board.on('ready', function() {
 
 	status.on('change', function(status, body){
 		console.log(JSON.parse(body).fullDisplayName, 'changed to', status);
-
-		var statusColorMap = {
-			success: 'go',
-			building: 'wait',
-			failure: 'stop'
-		};
-		// invoke lite.red(), lite.green(), or lite.blue()
-		lite[statusColorMap[status]]();
+		// invoke lite.failure(), lite.success(), or lite.building()
+		lite[status]();
 	});
 
 	status.start();

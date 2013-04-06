@@ -5,13 +5,13 @@ body {
   transition: background-color 1s;
   -webkit-transition: background-color 1s;
 }
-body.red {
+body.failure {
   background-color: #f00;
 }
-body.green {
+body.success {
   background-color: #008000;
 }
-body.blue {
+body.building {
   background-color: #00f;
 }
 body img.jenkins {

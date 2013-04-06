@@ -64,11 +64,11 @@ describe('CILite', function(){
 			assert.equal(lite.color, "blue")
 		})
 
-		it('should have .stop(), .wait(), .go() aliases for traffic light semantics', function(){
+		it('should have .failure(), .building(), .success() aliases for build status semantics', function(){
 			// alias methods
-			assert.ok(lite.go)
-			assert.ok(lite.stop)
-			assert.ok(lite.wait)
+			assert.ok(lite.success)
+			assert.ok(lite.failure)
+			assert.ok(lite.building)
 
 		})
 	})
