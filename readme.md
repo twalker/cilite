@@ -22,5 +22,7 @@ changes an rgb led light color:
 -------------
 ### Installation
 
-**dependencies**: nodejs, Arduino board setup for [johnny-five](https://github.com/rwldrn/johnny-five#setup-and-assemble-arduino) goodness.
+**dependencies**:  
+nodejs, Arduino board setup for [johnny-five](https://github.com/rwldrn/johnny-five#setup-and-assemble-arduino) goodness.
+
 `npm install`
