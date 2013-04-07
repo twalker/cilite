@@ -10,6 +10,12 @@ changes an rgb led light color:
     failed    =>  red
     building  =>  blue
 
+### Installation
+
+**dependencies**:  
+nodejs, Arduino board setup for [johnny-five](https://github.com/rwldrn/johnny-five#setup-and-assemble-arduino) goodness.
+
+`npm install`  
 `node main --url=JSON_STATUS_URL`  
 `npm test` to test (expects mounted board)  
 `node server --url=JSON_STATUS_URL` to use a webpage "light" instead of an Arduino board
@@ -19,10 +25,3 @@ changes an rgb led light color:
 
 <img src="https://github.com/twalker/cilite/raw/master/public/img/cilite_bb.png">
 
--------------
-### Installation
-
-**dependencies**:  
-nodejs, Arduino board setup for [johnny-five](https://github.com/rwldrn/johnny-five#setup-and-assemble-arduino) goodness.
-
-`npm install`
