@@ -18,3 +18,9 @@ changes an rgb led light color:
 <img src="https://github.com/twalker/cilite/raw/master/public/img/cilite.jpg">
 
 <img src="https://github.com/twalker/cilite/raw/master/public/img/cilite_bb.png">
+
+-------------
+### Installation
+
+**dependencies**: nodejs, Arduino board setup for [johnny-five](https://github.com/rwldrn/johnny-five#setup-and-assemble-arduino) goodness.
+`npm install`
