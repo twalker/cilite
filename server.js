@@ -3,7 +3,9 @@ var http = require('http'),
 	path = require('path'),
 	argv = require('optimist').argv,
 	BuildStatus = require('./lib/build-status'),
-	express = require('express');
+	express = require('express'),
+	stylus = require('stylus'),
+	nib = require('nib');
 
 var app = module.exports = express();
 var	server = http.createServer(app);
@@ -13,9 +15,9 @@ var statusUrl = argv.url || 'http://ci.jruby.org/job/jruby-dist-master/lastBuild
 
 var status = new BuildStatus({
 	url: statusUrl,
-	interval: 5000
-	/*
+	interval: 3000
 	// parsing function for debugging
+	/*
 	,parse: function(res) {
 		var stats = ['success', 'building', 'failure'];
 		var rnd = Math.floor(Math.random() * 3);
@@ -27,13 +29,13 @@ var status = new BuildStatus({
 io.on('connection', function(socket){
 	// send next response to client so they don't have to wait for change.
 	status.once('response',function(status, body){
-		io.sockets.emit('status:change', {status: status});
+		io.sockets.emit('status:change', {status: status, body: body});
 	});
 
 });
 
 status.on('change', function(status, body){
-	io.sockets.emit('status:change', {status: status});
+	io.sockets.emit('status:change', {status: status, body: body});
 });
 
 app
@@ -45,7 +47,12 @@ app
 	.use(express.favicon())
 	.use(express.logger('dev'))
 	.use(app.router)
-	.use(require('stylus').middleware(__dirname + '/public'))
+	.use(stylus.middleware({
+		src: __dirname + '/public',
+		compile: function (str, path) {
+				return stylus(str).set('filename', path).set('compress', true).use(nib());
+			}
+		}))
 	.use(express.static(path.join(__dirname, 'public')))
 	.use(express.errorHandler());
 

@@ -4,6 +4,17 @@ html
 		title cilite
 		link(rel='stylesheet', href='/css/style.css')
 		script(src="/socket.io/socket.io.js")
+		script(src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.0.0-rc.3/handlebars.min.js")
 		script(src="/js/cilite.js")
 	body
 		img.jenkins(src="/img/jenkins.png")
+		section.thought
+		//-TODO: mixing jade and mustache is kinda mind bending, lose jade.
+		script(id="failure-template", type="text/x-handlebars-template")
+			h2
+				| Oh my, it appears {{#each culprits}}{{fullName}} {{/each}} may have broken
+				| <a href="{{url}}" title="{{fullDisplayName}}">the build</a>.
+		script(id="success-template", type="text/x-handlebars-template")
+			h2
+				|  Another smashing success of <a href="{{url}}" title="{{fullDisplayName}}">a build</a> from {{#each culprits}}{{fullName}} {{/each}}.
+

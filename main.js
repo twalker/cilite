@@ -19,9 +19,9 @@ board.on('ready', function() {
 
 	var status = new BuildStatus({
 		url: statusUrl,
-		interval: 1000
-		/*
+		interval: 3000
 		// parsing function for debugging
+		/*
 		,parse: function(res) {
 			var stats = ['success', 'building', 'failure'];
 			var rnd = Math.floor(Math.random() * 3);
@@ -33,7 +33,7 @@ board.on('ready', function() {
 
 
 	status.on('change', function(status, body){
-		console.log(JSON.parse(body).fullDisplayName, 'changed to', status);
+		console.log(body.fullDisplayName, 'changed to', status);
 		// invoke lite.failure(), lite.success(), or lite.building()
 		lite[status]();
 	});
