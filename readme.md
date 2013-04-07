@@ -17,4 +17,4 @@ changes an rgb led light color:
 -------------
 <img src="https://github.com/twalker/cilite/raw/master/public/img/cilite.jpg">
 
-<img src="https://github.com/twalker/cilite/raw/master/public/img/cilite_bb.jpg">
+<img src="https://github.com/twalker/cilite/raw/master/public/img/cilite_bb.png">
