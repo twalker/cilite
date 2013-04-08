@@ -24,6 +24,7 @@ var status = new BuildStatus({
 		return stats[rnd];
 	}
 	*/
+
 });
 
 io.on('connection', function(socket){
