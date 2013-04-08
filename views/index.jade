@@ -13,9 +13,9 @@ html
 
 		script(id="failure-template", type="text/x-handlebars-template")
 			h2.
-				Oh my, it appears {{#each culprits}}{{fullName}} {{/each}} may have
+				Oh dear, it appears {{#each culprits}}{{fullName}} {{/each}} may have
 				broken the <a href="{{url}}" title="{{fullDisplayName}}">build</a>.
 		script(id="success-template", type="text/x-handlebars-template")
 			h2.
 				Another smashing success of a <a href="{{url}}" title="{{fullDisplayName}}">build</a>
-				from {{#each culprits}}{{fullName}} {{/each}}.
+				by {{#each culprits}}{{fullName}} {{/each}}.
