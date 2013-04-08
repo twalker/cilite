@@ -14,9 +14,9 @@ changes an rgb led light color:
 nodejs, an [Arduino](http://www.arduino.cc/) setup for [johnny-five](https://github.com/rwldrn/johnny-five#setup-and-assemble-arduino) goodness.
 
 `npm install`  
-`node main --url=JSON_STATUS_URL`  
+`node main --url=JSON_API_URL_FOR_LAST_BUILD`  
 `npm test` to test (expects a mounted Arduino board)  
-`node server --url=JSON_STATUS_URL` to use a webpage "light" instead of an Arduino board
+`node server --url=JSON_API_URL_FOR_LAST_BUILD` to use a webpage "light" instead of an Arduino board
 
 -------------
 
