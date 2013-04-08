@@ -1,7 +1,7 @@
 cilite
 ======
 
-An [Arduino](http://www.arduino.cc/) build status light for use within a continious integration workflow.
+A build status light for use within a continious integration workflow.
 
 It polls [Jenkins](http://jenkins-ci.org/) for the status of the last build and 
 changes an rgb led light color:
@@ -10,17 +10,16 @@ changes an rgb led light color:
     failed    =>  red
     building  =>  blue
 
-### Installation
-
 **dependencies**:  
-nodejs, Arduino board setup for [johnny-five](https://github.com/rwldrn/johnny-five#setup-and-assemble-arduino) goodness.
+nodejs, an [Arduino](http://www.arduino.cc/) setup for [johnny-five](https://github.com/rwldrn/johnny-five#setup-and-assemble-arduino) goodness.
 
 `npm install`  
 `node main --url=JSON_STATUS_URL`  
-`npm test` to test (expects mounted board)  
+`npm test` to test (expects a mounted Arduino board)  
 `node server --url=JSON_STATUS_URL` to use a webpage "light" instead of an Arduino board
 
 -------------
+
 <img src="https://github.com/twalker/cilite/raw/master/public/img/cilite.jpg">
 
 <img src="https://github.com/twalker/cilite/raw/master/public/img/cilite_bb.png">
