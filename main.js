@@ -17,6 +17,8 @@ board.on('ready', function() {
 		}
 	});
 
+	this.repl.inject({ lite: lite });
+
 	var status = new BuildStatus({
 		url: statusUrl,
 		interval: 3000
@@ -29,8 +31,6 @@ board.on('ready', function() {
 		}
 		*/
 	});
-
-
 
 	status.on('change', function(status, body){
 		console.log(body.fullDisplayName, 'changed to', status);

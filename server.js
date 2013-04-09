@@ -24,7 +24,6 @@ var status = new BuildStatus({
 		return stats[rnd];
 	}
 	*/
-
 });
 
 io.on('connection', function(socket){
@@ -40,7 +39,7 @@ status.on('change', function(status, body){
 });
 
 app
-	.set('port', process.env.PORT || 3000)
+	.set('port', process.env.PORT || 3001)
 	.set('views', __dirname + '/views')
 	.set('view engine', 'jade');
 
