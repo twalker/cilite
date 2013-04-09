@@ -30,4 +30,4 @@ Whatever, if Jenkins get's mad, I'll remove it. But Jenkins looks like an awfull
 
 -------------
 
-Copyright (c) 2013 Tim Walker Licensed under the MIT license.
+Licensed under the MIT license.
