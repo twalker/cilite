@@ -7,15 +7,20 @@ var http = require('http'),
 	stylus = require('stylus'),
 	nib = require('nib');
 
+var config = {
+	port: process.env.PORT || 3001,
+	ip: process.env.IP || '127.0.0.1',
+	statusUrl: argv.url || 'http://ci.jruby.org/job/jruby-dist-master/lastBuild/api/json?pretty=true',
+	interval: argv.interval || 3000
+};
+
 var app = module.exports = express();
 var	server = http.createServer(app);
 var io = require('socket.io').listen(server);
 
-var statusUrl = argv.url || 'http://ci.jruby.org/job/jruby-dist-master/lastBuild/api/json?pretty=true';
-
 var status = new BuildStatus({
-	url: statusUrl,
-	interval: 3000
+	url: config.statusUrl,
+	interval: config.interval
 	// parsing function for debugging
 	/*
 	,parse: function(res) {
@@ -39,7 +44,7 @@ status.on('change', function(status, body){
 });
 
 app
-	.set('port', process.env.PORT || 3001)
+	.set('host', config.ip + ':' + config.port)
 	.set('views', __dirname + '/views')
 	.set('view engine', 'jade');
 
@@ -61,8 +66,9 @@ app.get('/', function(req, res){
 });
 
 
-server.listen(app.get('port'), function(){
-  console.log("Express server listening on port " + app.get('port'));
-  // start polling for build status
-  status.start();
+server.listen(config.port, config.ip, function(){
+	var address = server.address();
+	console.log("cilite server listening on http://%s:%s", address.address, address.port);
+	// start polling for build status
+	status.start();
 });

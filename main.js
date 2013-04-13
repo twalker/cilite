@@ -4,7 +4,11 @@ var five = require('johnny-five'),
 	CILite = require('./lib/cilite'),
 	BuildStatus = require('./lib/build-status');
 
-var statusUrl = argv.url || 'http://ci.jruby.org/job/jruby-dist-master/lastBuild/api/json?pretty=true';
+var config = {
+	statusUrl: argv.url || 'http://ci.jruby.org/job/jruby-dist-master/lastBuild/api/json?pretty=true',
+	interval: argv.interval || 3000
+};
+
 var board = new five.Board();
 
 board.on('ready', function() {
@@ -20,8 +24,8 @@ board.on('ready', function() {
 	this.repl.inject({ lite: lite });
 
 	var status = new BuildStatus({
-		url: statusUrl,
-		interval: 3000
+		url: config.statusUrl,
+		interval: config.interval
 		// parsing function for debugging
 		/*
 		,parse: function(res) {

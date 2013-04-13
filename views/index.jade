@@ -19,3 +19,6 @@ html
 			h2.
 				Another smashing success of a <a href="{{url}}" title="{{fullDisplayName}}">build</a>
 				by {{#each culprits}}{{fullName}} {{/each}}.
+
+		script
+			cilite.listen(io.connect('http://#{settings.host}'));
