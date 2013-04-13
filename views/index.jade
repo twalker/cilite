@@ -1,24 +1,24 @@
 doctype 5
 html
-	head
-		title cilite
-		link(href='http://fonts.googleapis.com/css?family=Fondamento', rel='stylesheet', type='text/css')
-		link(rel='stylesheet', href='/css/style.css')
-		script(src="/socket.io/socket.io.js")
-		script(src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.0.0-rc.3/handlebars.min.js")
-		script(src="/js/cilite.js")
-	body
-		img.jenkins(src="/img/jenkins.png")
-		section.thought
+  head
+    title cilite
+    link(href='http://fonts.googleapis.com/css?family=Fondamento', rel='stylesheet', type='text/css')
+    link(rel='stylesheet', href='/css/style.css')
+    script(src="/socket.io/socket.io.js")
+    script(src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.0.0-rc.3/handlebars.min.js")
+    script(src="/js/cilite.js")
+  body
+    img.jenkins(src="/img/jenkins.png")
+    section.thought
 
-		script(id="failure-template", type="text/x-handlebars-template")
-			h2.
-				Oh dear, it appears {{#each culprits}}{{fullName}} {{/each}} may have
-				broken the <a href="{{url}}" title="{{fullDisplayName}}">build</a>.
-		script(id="success-template", type="text/x-handlebars-template")
-			h2.
-				Another smashing success of a <a href="{{url}}" title="{{fullDisplayName}}">build</a>
-				by {{#each culprits}}{{fullName}} {{/each}}.
+    script(id="failure-template", type="text/x-handlebars-template")
+      h2.
+        Oh dear, it appears {{#each culprits}}{{fullName}} {{/each}} may have
+        broken the <a href="{{url}}" title="{{fullDisplayName}}">build</a>.
+    script(id="success-template", type="text/x-handlebars-template")
+      h2.
+        Another smashing success of a <a href="{{url}}" title="{{fullDisplayName}}">build</a>
+        by {{#each culprits}}{{fullName}} {{/each}}.
 
-		script
-			cilite.listen(io.connect('http://#{settings.host}'));
+    script
+      cilite.listen(io.connect('http://#{settings.host}'));

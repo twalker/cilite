@@ -1,54 +1,54 @@
 @import 'nib'
 
 *
-	box-sizing border-box
+  box-sizing border-box
 
 body
-	padding 30px
-	font 14px sans-serif
-	background-color #fff
-	transition background-color 1s
-	&.failure
-		background-color red
+  padding 30px
+  font 14px sans-serif
+  background-color #fff
+  transition background-color 1s
+  &.failure
+    background-color red
 
-	&.success
-		background-color green
+  &.success
+    background-color green
 
-	&.building
-		background-color blue
+  &.building
+    background-color blue
 
-	img.jenkins
-		display block
-		margin auto
-		width 50%
-		transition all 2s
+  img.jenkins
+    display block
+    margin auto
+    width 50%
+    transition all 2s
 
 
-	&.building img.jenkins
-		//todo: transform
-	&.failure img.jenkins,
-	&.success img.jenkins
-		width 35%
-		margin-top 20%
+  &.building img.jenkins
+    //todo: transform
+  &.failure img.jenkins,
+  &.success img.jenkins
+    width 35%
+    margin-top 20%
 
-	section.thought
-		padding 40px
-		background url(/img/thought.png)
-		background-size 100%
-		background-repeat no-repeat
-		position absolute
-		right 10%
-		top 5%
-		width 300px
-		height 250px
-		opacity 0
-		transition opacity 1s
-		h2
-			font-family 'Fondamento', cursive;
-			font-weight normal
-			font-size 24px
-			text-align center
+  section.thought
+    padding 40px
+    background url(/img/thought.png)
+    background-size 100%
+    background-repeat no-repeat
+    position absolute
+    right 10%
+    top 5%
+    width 300px
+    height 250px
+    opacity 0
+    transition opacity 1s
+    h2
+      font-family 'Fondamento', cursive;
+      font-weight normal
+      font-size 24px
+      text-align center
 
-	&.failure section.thought,
-	&.success section.thought
-		opacity 1
+  &.failure section.thought,
+  &.success section.thought
+    opacity 1

@@ -1,24 +1,24 @@
 var cilite = (function(){
-	function listen(socket){
-		socket.on('status:change', function(msg){
-			//console.log('recieved', msg.status)
-			var status = msg.status,
-				res = msg.body,
-				src = document.getElementById(status + '-template'),
-				template;
+  function listen(socket){
+    socket.on('status:change', function(msg){
+      //console.log('recieved', msg.status)
+      var status = msg.status
+        , res = msg.body
+        , src = document.getElementById(status + '-template')
+        , template;
 
-			document.body.className = status;
-			document.title = status + ' <= ' + res.fullDisplayName;
+      document.body.className = status;
+      document.title = status + ' <= ' + res.fullDisplayName;
 
-			// mustache template exists, render the message
-			if(src) {
-				template = Handlebars.compile(src.innerHTML);
-				document.querySelector('section.thought').innerHTML = template(res);
-			}
-		});
+      // mustache template exists, render the message
+      if(src) {
+        template = Handlebars.compile(src.innerHTML);
+        document.querySelector('section.thought').innerHTML = template(res);
+      }
+    });
 
-	}
-	return {
-		listen: listen
-	}
+  }
+  return {
+    listen: listen
+  }
 })()
