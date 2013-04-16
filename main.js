@@ -39,7 +39,13 @@ board.on('ready', function() {
   status.on('change', function(status, body){
     console.log(body.fullDisplayName, 'changed to', status);
     // invoke lite.failure(), lite.success(), or lite.building()
-    lite[status]();
+    if(lite[status]){
+      lite[status]();
+    } else {
+      // some other status, white
+      lite.on();
+    }
+    
   });
 
   status.start();
