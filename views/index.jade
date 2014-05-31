@@ -1,4 +1,4 @@
-doctype 5
+doctype html
 html
   head
     title cilite
@@ -20,5 +20,5 @@ html
         Another smashing success of a <a href="{{url}}" title="{{fullDisplayName}}">build</a>
         by {{#each culprits}}{{fullName}} {{/each}}.
 
-    script
+    script.
       cilite.listen(io.connect('http://#{settings.host}'));

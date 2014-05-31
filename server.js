@@ -48,9 +48,7 @@ app
   .set('view engine', 'jade');
 
 app
-  .use(express.favicon())
-  .use(express.logger('dev'))
-  .use(app.router)
+  .use(require('morgan')('dev'))
   .use(stylus.middleware({
     src: __dirname + '/public',
     compile: function (str, path) {
@@ -58,7 +56,7 @@ app
       }
     }))
   .use(express.static(path.join(__dirname, 'public')))
-  .use(express.errorHandler());
+  .use(require('errorhandler')({ dumpExceptions: true, showStack: true }));
 
 app.get('/', function(req, res){
   res.render('index');
